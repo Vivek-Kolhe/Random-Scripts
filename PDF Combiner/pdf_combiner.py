@@ -8,7 +8,7 @@ def combinePDF(pdf_list):
 	for pdf in pdf_list:
 		merge.append(pdf)
 
-	merge.write(output)
+	merge.write(output + ".pdf")
 
 combinePDF(pdf_list)
 print("All Done!")
