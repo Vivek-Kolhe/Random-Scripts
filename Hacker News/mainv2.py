@@ -38,4 +38,4 @@ while True:
         print("Thnaks for using me! Give me a star if you like it!")
         break
     else:
-        print("Enter either y or n!")
+        print("Enter either y or n! ")
