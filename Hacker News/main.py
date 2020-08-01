@@ -22,4 +22,4 @@ def hackerNews(data, votes):
                 news.append({"Title" : title, "Link" : link, "Points" : points})
     return sortByPoints(news)
 
-pprint.pprint(hackerNews(data, votes))
+pprint.pprint(hackerNews(data, votes)) 
