@@ -24,7 +24,7 @@ def main(query):
     x = game_details.find("DESCRIPTION:")
     torrent_size = soup.select("div.tor-link span")[0].text
     torrent_link = "https://repack-mechanics.com" + soup.select("div.tor-link a")[0]["href"]
-    print(game_details[1:x-2] + f"\nTorret Size: {torrent_size}\n-----")            # displaying details of selected game
+    print(game_details[1:x-2] + f"\nTorrent Size: {torrent_size}\n-----")            # displaying details of selected game
     download_torrent(torrent_link)
 
 def download_torrent(torrent_link):                                      # getting .torrent file
