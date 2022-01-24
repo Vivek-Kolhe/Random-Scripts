@@ -20,3 +20,6 @@ A simple CLI for trimming audio from any video written in python.
     ```$ pip3 install acsuite-orangechannel```
   - Argparse.\
     ```$ pip3 install argparse```
+  
+**Note:** This should work just fine with `.mkv` files. It also require one extra plugin or addon from vapoursynth, you can installed it using\
+`$ vsrepo.py install lsmas` once you've vapoursynth installed.
