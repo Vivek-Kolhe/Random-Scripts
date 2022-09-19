@@ -13,7 +13,7 @@ def send_document(url, caption):
     return requests.post(f'https://api.telegram.org/bot{Configs.BOT_TOKEN}/sendDocument?chat_id={Configs.CHANNEL_ID}&document={url}&caption={caption}').json()
 
 def api_response():
-    return requests.get("https://yande.re/post.json?limit=100").json()
+    return requests.get("https://yande.re/post.json?limit=200").json()
 
 def main():
     response = api_response()[::-1]
@@ -28,7 +28,6 @@ def main():
         for item in filtered:
             # simple hack to escape '#' and spaces.
             tags = '%20'.join(list(map(lambda x: f'%23{x}', item['tags'].split())))
-            print(tags)
             r = send_photo(item["sample_url"], tags)
             # checking if the image was sent successfully, if not returning none and keeping track of last successfully sent image.
             if not r["ok"]:
@@ -40,4 +39,6 @@ def main():
         collection.update_one({"_id" : 1}, {"$set" : {"yand_id" : filtered[-1]["id"]}})
 
 if __name__ == "__main__":
-    main()
+    while True:
+        main()
+        sleep(10*60)
